@@ -25,6 +25,10 @@ export type GameHud = {
   highScore: number;
   weapon: Weapon;
   weaponName: string;
+  melee: Weapon;
+  meleeName: string;
+  gun: Weapon;
+  gunName: string;
   unlocked: Weapon[];
   banner: string;
   nixLine: string;
@@ -37,6 +41,7 @@ export type GameHud = {
   worldsCleared: number;
   hoverboots: boolean;
   swingshot: boolean;
+  version: string;
 };
 
 const initial: GameHud = {
@@ -51,8 +56,12 @@ const initial: GameHud = {
   lives: 5,
   score: 0,
   highScore: 0,
-  weapon: "wrench",
-  weaponName: "Omniwrench",
+  weapon: "blaster",
+  weaponName: "Pulse Blaster",
+  melee: "wrench",
+  meleeName: "Omniwrench",
+  gun: "blaster",
+  gunName: "Pulse Blaster",
   unlocked: ["wrench", "blaster"],
   banner: "",
   nixLine: "",
@@ -63,8 +72,9 @@ const initial: GameHud = {
   gateMeter: 0,
   gommage: 33,
   worldsCleared: 0,
-  hoverboots: false,
+  hoverboots: true,
   swingshot: false,
+  version: "0.5.0",
 };
 
 export const useGameStore = create<GameHud>(() => ({ ...initial }));
