@@ -1,2 +1,2 @@
-export const GAME_VERSION = "0.5.0";
-export const GAME_CODENAME = "Dual Jump";
+export const GAME_VERSION = "1.0.0";
+export const GAME_CODENAME = "Gate Closed";

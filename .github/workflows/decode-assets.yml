@@ -25,45 +25,38 @@ jobs:
             for f in docs/media-b64/*.b64; do
               [ -f "$f" ] || continue
               name=$(basename "$f" .b64)
-              if tr -d '\n\r ' < "$f" | base64 -d > "docs/media/$name" 2>/dev/null; then
-                echo "decoded docs/media/$name ($(wc -c < "docs/media/$name") bytes)"
-              else
-                echo "skip invalid $f"
-                rm -f "docs/media/$name"
-              fi
+              tr -d '\n\r ' < "$f" | base64 -d > "docs/media/$name"
+              echo "decoded docs/media/$name ($(wc -c < "docs/media/$name") bytes)"
             done
           fi
-          if [ -d releases/apk-chunks ] && ls releases/apk-chunks/*.b64 >/dev/null 2>&1; then
-            if cat $(ls releases/apk-chunks/*.b64 | sort) | tr -d '\n\r ' | base64 -d > releases/Skybound-Riftkeepers.apk; then
-              echo "decoded APK from chunks ($(wc -c < releases/Skybound-Riftkeepers.apk) bytes)"
-            else
-              echo "APK decode failed"
-              rm -f releases/Skybound-Riftkeepers.apk
-            fi
+          if [ -d releases/apk-chunks ]; then
+            cat $(ls releases/apk-chunks/*.b64 | sort) | tr -d '\n\r ' | base64 -d > releases/Skybound-Riftkeepers-v1.0.0.apk
+            echo "decoded APK from chunks ($(wc -c < releases/Skybound-Riftkeepers-v1.0.0.apk) bytes)"
           fi
       - name: Commit decoded binaries
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/media
-          if ls releases/*.apk >/dev/null 2>&1; then
-            git add releases/*.apk
-          fi
+          git add docs/media releases/*.apk || true
           if git diff --cached --quiet; then
             echo "no binary changes"
           else
-            git commit -m "Add decoded screenshots and Android APK"
+            git commit -m "Add decoded v1.0.0 Android APK"
             git push
           fi
-      - name: Publish APK release
+      - name: Publish v1.0.0 release
         uses: softprops/action-gh-release@v2
-        if: hashFiles('releases/Skybound-Riftkeepers.apk') != ''
+        if: hashFiles('releases/Skybound-Riftkeepers-v1.0.0.apk') != ''
         with:
           tag_name: v1.0.0
-          name: Skybound Riftkeeper v1.0.0
+          name: Skybound Riftkeeper v1.0.0 — Gate Closed
           body: |
-            Sideload **Skybound-Riftkeepers.apk** (landscape, package `com.skybound.riftkeepers`).
+            Same 3D campaign as the live game.
 
-            Enable *Install unknown apps* for your browser or file manager, then open the APK.
-          files: releases/Skybound-Riftkeepers.apk
+            **Android:** sideload `Skybound-Riftkeepers-v1.0.0.apk` (landscape, `com.skybound.riftkeepers`). Enable *Install unknown apps*, then open the APK.
+
+            **Windows:** the portable `Skybound.exe` pack is larger than GitHub's repo file cap — use the v1.0.0 Windows zip from the project chat. Unzip and double-click `Skybound.exe`. No install.
+
+            Double jump from Hookhaven. J wrench, F gun. Mobile score/Nix sit at the top, off the buttons.
+          files: releases/Skybound-Riftkeepers-v1.0.0.apk
           make_latest: true

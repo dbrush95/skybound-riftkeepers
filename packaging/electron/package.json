@@ -1,0 +1,7 @@
+{
+  "name": "skybound-riftkeepers",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.cjs",
+  "productName": "Skybound Riftkeeper"
+}

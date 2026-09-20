@@ -1,6 +1,6 @@
 # Skybound: Riftkeeper
 
-**Version 0.5.0 — Dual Jump**
+**Version 1.0.0 — Gate Closed**
 
 Third-person gadget platformer. Name your inventor, smash crates, swing the Omniwrench, blast coral bots, and close **ten sky gates** before Captain Vesper Kael aims the Fracture.
 
@@ -8,7 +8,7 @@ Inspired by classic 3D action-platformers — original cast, worlds, and story. 
 
 **Repo:** [github.com/dbrush95/skybound-riftkeepers](https://github.com/dbrush95/skybound-riftkeepers)
 
-See [CHANGELOG.md](CHANGELOG.md) for what changed in each version. This tree is **0.5.0**.
+See [CHANGELOG.md](CHANGELOG.md) for what changed in each version. This tree is **1.0.0**.
 
 ## Play
 
@@ -25,9 +25,9 @@ Open the app, type a captain name (default **Rook Vane**), press **Start Adventu
 | Q / E or drag right | Orbit camera |
 | Esc | Pause |
 
-Touch: left half of the lower screen is a floating stick. Right half looks. Face buttons are Jump, Wrench, Blast, Sprint, Cycle.
+Touch: stick bottom-left, face buttons bottom-right. Score, bolts, lives, and Nix stay at the **top** so they are never under the buttons.
 
-Wrench and gun are separate, like a dual-wield action platformer. You do not have to "equip wrench" to smash a crate.
+Wrench and gun are separate. You do not have to equip wrench to smash a crate.
 
 ## Worlds
 
@@ -46,14 +46,13 @@ Fill the gate meter (crates + bots), then walk into the Sky Gate. Swing-shot orb
 
 ## Download
 
-Source zip for **this** version: `downloads/v0.5.0/Skybound-Riftkeepers-v0.5.0-source.zip`
-
-| Platform | Link |
+| Platform | File |
 | --- | --- |
-| **Android APK** | [Skybound-Riftkeepers.apk](https://github.com/dbrush95/skybound-riftkeepers/releases/latest/download/Skybound-Riftkeepers.apk) |
-| **Web / source** | Clone this repo, then `npm install` and `npm run dev` |
+| **Windows** | `Skybound-Riftkeepers-v1.0.0-Windows.zip` — unzip, double-click `Skybound.exe` |
+| **Android APK** | [Releases](https://github.com/dbrush95/skybound-riftkeepers/releases/latest) |
+| **Source** | `Skybound-Riftkeepers-v1.0.0-source.zip` |
 
-Sideload the APK (landscape, package `com.skybound.riftkeepers`): enable **Install unknown apps** for your browser or file manager, then open the file.
+Sideload the APK (landscape, package `com.skybound.riftkeepers`): enable **Install unknown apps**, then open the file.
 
 ## Screenshots
 
