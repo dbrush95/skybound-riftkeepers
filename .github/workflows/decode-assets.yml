@@ -5,6 +5,7 @@ on:
     paths:
       - "docs/media-b64/**"
       - "releases/*.b64"
+      - "releases/apk-chunks/**"
       - ".github/workflows/decode-assets.yml"
   workflow_dispatch:
 
@@ -24,15 +25,18 @@ jobs:
             for f in docs/media-b64/*.b64; do
               [ -f "$f" ] || continue
               name=$(basename "$f" .b64)
-              base64 -d "$f" > "docs/media/$name"
-              echo "decoded docs/media/$name"
+              tr -d '\n\r ' < "$f" | base64 -d > "docs/media/$name"
+              echo "decoded docs/media/$name ($(wc -c < "docs/media/$name") bytes)"
             done
           fi
-          if [ -d releases ]; then
+          if [ -d releases/apk-chunks ]; then
+            cat $(ls releases/apk-chunks/*.b64 | sort) | tr -d '\n\r ' | base64 -d > releases/Skybound-Riftkeepers.apk
+            echo "decoded APK from chunks ($(wc -c < releases/Skybound-Riftkeepers.apk) bytes)"
+          elif ls releases/*.b64 >/dev/null 2>&1; then
             for f in releases/*.b64; do
               [ -f "$f" ] || continue
               name=$(basename "$f" .b64)
-              base64 -d "$f" > "releases/$name"
+              tr -d '\n\r ' < "$f" | base64 -d > "releases/$name"
               echo "decoded releases/$name"
             done
           fi
