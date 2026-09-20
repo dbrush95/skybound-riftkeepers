@@ -1,15 +1,17 @@
-# Skybound: Riftkeeper v1.0.0 — Gate Closed
+# Skybound: Riftkeeper downloads
 
-Same 3D campaign as the live game (ten worlds, double jump, wrench + gun, mobile HUD at the top).
+Artifacts live in [`releases/`](releases/).
 
-## Play
+| File | What |
+| --- | --- |
+| [Skybound-Riftkeepers-v1.0.0-source.zip](releases/Skybound-Riftkeepers-v1.0.0-source.zip) | v1.0.0 full source (unzipped and re-zipped from the Desktop pack) |
+| [Skybound-Riftkeepers-v1.0.0.apk](releases/Skybound-Riftkeepers-v1.0.0.apk) | Android sideload (`com.skybound.riftkeepers`) |
+| [apk-chunks/](releases/apk-chunks/) | Base64 slices of the APK |
+| [Skybound-Riftkeepers-v0.5.0-source.zip](releases/Skybound-Riftkeepers-v0.5.0-source.zip) | Dual Jump source |
+| [Skybound-Riftkeeper-v0.5.0-Native-Windows.zip](releases/Skybound-Riftkeeper-v0.5.0-Native-Windows.zip) | Small native Windows build |
+| [PLAY.txt](releases/PLAY.txt) | How to play the v1.0.0 pack |
 
-- **In browser:** open the project app, type a captain name, Start Adventure.
-- **Windows:** unzip `Skybound-Riftkeepers-v1.0.0-Windows.zip` and double-click `Skybound.exe`. No install. This pack is larger than GitHub's file cap, so it ships in the project chat.
-- **Android:** sideload `Skybound-Riftkeepers-v1.0.0.apk` (landscape, `com.skybound.riftkeepers`). Enable *Install unknown apps*.
-- **Source:** `Skybound-Riftkeepers-v1.0.0-source.zip` is the full tree (engine, worlds, HUD).
-
-All-in-one chat pack: `Skybound-Riftkeepers-v1.0.0.zip` (PLAY + Windows + APK + source).
+The Electron **Windows** portable (`Skybound-Riftkeepers-v1.0.0-Windows.zip`, ~114 MB) is over GitHub's 100 MB file cap. Keep it on the Desktop; do not commit the four duplicate `*-grok-workspace.zip` copies.
 
 Repo: https://github.com/dbrush95/skybound-riftkeepers
 Donate: https://x.com/dallasbrush

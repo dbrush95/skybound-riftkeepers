@@ -1,0 +1,15 @@
+Skybound: Riftkeeper  v1.0.0  Gate Closed
+=========================================
+This pack is the SAME 3D game as the live preview
+(ten worlds, double jump, wrench + gun, mobile HUD at the top).
+
+Windows: unzip Skybound-Riftkeepers-v1.0.0-Windows.zip
+         double-click Skybound.exe
+
+Android: sideload Skybound-Riftkeepers-v1.0.0.apk
+         (landscape). Enable Install unknown apps.
+
+Source:  Skybound-Riftkeepers-v1.0.0-source.zip
+
+GitHub:  https://github.com/dbrush95/skybound-riftkeepers
+Donate:  https://x.com/dallasbrush
