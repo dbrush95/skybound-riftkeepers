@@ -25,20 +25,21 @@ jobs:
             for f in docs/media-b64/*.b64; do
               [ -f "$f" ] || continue
               name=$(basename "$f" .b64)
-              tr -d '\n\r ' < "$f" | base64 -d > "docs/media/$name"
-              echo "decoded docs/media/$name ($(wc -c < "docs/media/$name") bytes)"
+              if tr -d '\n\r ' < "$f" | base64 -d > "docs/media/$name" 2>/dev/null; then
+                echo "decoded docs/media/$name ($(wc -c < "docs/media/$name") bytes)"
+              else
+                echo "skip invalid $f"
+                rm -f "docs/media/$name"
+              fi
             done
           fi
-          if [ -d releases/apk-chunks ]; then
-            cat $(ls releases/apk-chunks/*.b64 | sort) | tr -d '\n\r ' | base64 -d > releases/Skybound-Riftkeepers.apk
-            echo "decoded APK from chunks ($(wc -c < releases/Skybound-Riftkeepers.apk) bytes)"
-          elif ls releases/*.b64 >/dev/null 2>&1; then
-            for f in releases/*.b64; do
-              [ -f "$f" ] || continue
-              name=$(basename "$f" .b64)
-              tr -d '\n\r ' < "$f" | base64 -d > "releases/$name"
-              echo "decoded releases/$name"
-            done
+          if [ -d releases/apk-chunks ] && ls releases/apk-chunks/*.b64 >/dev/null 2>&1; then
+            if cat $(ls releases/apk-chunks/*.b64 | sort) | tr -d '\n\r ' | base64 -d > releases/Skybound-Riftkeepers.apk; then
+              echo "decoded APK from chunks ($(wc -c < releases/Skybound-Riftkeepers.apk) bytes)"
+            else
+              echo "APK decode failed"
+              rm -f releases/Skybound-Riftkeepers.apk
+            fi
           fi
       - name: Commit decoded binaries
         run: |
@@ -64,7 +65,5 @@ jobs:
             Sideload **Skybound-Riftkeepers.apk** (landscape, package `com.skybound.riftkeepers`).
 
             Enable *Install unknown apps* for your browser or file manager, then open the APK.
-
-            Windows portable pack is over GitHub's 100 MB file cap — use the zip from the project chat.
           files: releases/Skybound-Riftkeepers.apk
           make_latest: true
