@@ -68,4 +68,4 @@ Fill the gate meter (crates + bots), then walk into the Sky Gate. Hoverboots unl
 
 If you finish the last gate:
 
-> Hope you enjoyed, AI is sure advancing. Donate to me on X [@dallasbrush](https://x.com/dallasbrush)
+> Hope you enjoyed, AI is sure advancing. We are only at the begining of the frontier. If you feel inclined Donate to me on X [@dallasbrush](https://x.com/dallasbrush)
