@@ -31,6 +31,15 @@ Fill the gate meter (crates + bots), then walk into the Sky Gate.
 1. Hookhaven  2. Coral Reach  3. Bonewild  4. Crash Canyons  5. Neon Docks
 6. Ringfall  7. Cap Isles  8. Paintveil  9. Crystal Spire  10. Smash Deck
 
+## Python snapshots (v0.1 / v0.2)
+
+The Desktop folder **Skybound riftkeepers** is also in this repo:
+
+- [v0.1/](v0.1/) — `Dallas_Skybound1.zip` snapshot (extracted)
+- [v0.2/](v0.2/) — `Dallas_Skybound2.zip` snapshot (extracted). The Windows installer `Skybound_Riftkeepers_Setup2.exe` (~37 MB) is still on the Desktop and is not in git.
+
+That snapshot is **Dallas: Skybound**, a self-contained Pygame side-scroller. Play it with `python game.py` (see [GAME.md](GAME.md)).
+
 ## Credits
 
 After the last gate: *Ai has come a long way, but we are only at the beginning of the frontier. Keep the world moving forward. Thanks for playing. If you feel inclined, you can donate to me on X [@dallasbrush](https://x.com/dallasbrush).*
