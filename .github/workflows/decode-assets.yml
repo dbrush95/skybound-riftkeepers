@@ -1,0 +1,49 @@
+name: Decode binary assets
+
+on:
+  push:
+    paths:
+      - "docs/media-b64/**"
+      - "releases/*.b64"
+      - ".github/workflows/decode-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode base64 screenshots and APK
+        run: |
+          set -euo pipefail
+          mkdir -p docs/media releases
+          if [ -d docs/media-b64 ]; then
+            for f in docs/media-b64/*.b64; do
+              [ -f "$f" ] || continue
+              name=$(basename "$f" .b64)
+              base64 -d "$f" > "docs/media/$name"
+              echo "decoded docs/media/$name"
+            done
+          fi
+          if [ -d releases ]; then
+            for f in releases/*.b64; do
+              [ -f "$f" ] || continue
+              name=$(basename "$f" .b64)
+              base64 -d "$f" > "releases/$name"
+              echo "decoded releases/$name"
+            done
+          fi
+      - name: Commit decoded binaries
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/media releases/*.apk || true
+          if git diff --cached --quiet; then
+            echo "no binary changes"
+          else
+            git commit -m "Add decoded screenshots and Android APK"
+            git push
+          fi
