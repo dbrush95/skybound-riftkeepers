@@ -14,6 +14,8 @@ export const NIX_LINES = {
   vendor: "Mama Coil. She'll sell you nanotech if you stop breaking her stalls.",
   die: "That was the job. The falling is extra.",
   vesper: "Vesper wants the Fracture aimed. We want it closed. Guess who brought a wrench.",
+  locked: "That gadget is still in a crate on a later island. Smash more gates.",
+  jump: "Tap jump again in the air. The expensive boot is not a decoration.",
 };
 
 export type WeaponId = Weapon;
@@ -21,6 +23,7 @@ export type WeaponId = Weapon;
 export type WeaponDef = {
   id: WeaponId;
   name: string;
+  short: string;
   slot: number;
   kind: "melee" | "gun" | "beam" | "bomb" | "stun";
   unlockAt: number;
@@ -30,14 +33,14 @@ export type WeaponDef = {
 };
 
 export const WEAPONS: WeaponDef[] = [
-  { id: "wrench", name: "Omniwrench", slot: 1, kind: "melee", unlockAt: 0, color: 0xc67b3a, damage: 1, cooldown: 0.32 },
-  { id: "blaster", name: "Pulse Blaster", slot: 2, kind: "gun", unlockAt: 0, color: 0x7ad4d4, damage: 1, cooldown: 0.18 },
-  { id: "coil", name: "Shock Coil", slot: 3, kind: "beam", unlockAt: 1, color: 0x66ddff, damage: 1, cooldown: 0.22 },
-  { id: "bomb", name: "Bomb Glove", slot: 4, kind: "bomb", unlockAt: 2, color: 0xff8844, damage: 2, cooldown: 0.55 },
-  { id: "groove", name: "Groovitron", slot: 5, kind: "stun", unlockAt: 3, color: 0xff66cc, damage: 0, cooldown: 1.1 },
-  { id: "fusion", name: "Fusion Rifle", slot: 6, kind: "gun", unlockAt: 4, color: 0xc8ff88, damage: 2, cooldown: 0.38 },
-  { id: "paint", name: "Paintbrush Cannon", slot: 7, kind: "gun", unlockAt: 6, color: 0xff88aa, damage: 2, cooldown: 0.28 },
-  { id: "hammer", name: "Mega Smash", slot: 8, kind: "melee", unlockAt: 8, color: 0xffe08a, damage: 3, cooldown: 0.46 },
+  { id: "wrench", name: "Omniwrench", short: "Wrench", slot: 1, kind: "melee", unlockAt: 0, color: 0xc67b3a, damage: 1, cooldown: 0.32 },
+  { id: "blaster", name: "Pulse Blaster", short: "Blaster", slot: 2, kind: "gun", unlockAt: 0, color: 0x7ad4d4, damage: 1, cooldown: 0.18 },
+  { id: "coil", name: "Shock Coil", short: "Coil", slot: 3, kind: "beam", unlockAt: 1, color: 0x66ddff, damage: 1, cooldown: 0.22 },
+  { id: "bomb", name: "Bomb Glove", short: "Bomb", slot: 4, kind: "bomb", unlockAt: 2, color: 0xff8844, damage: 2, cooldown: 0.55 },
+  { id: "groove", name: "Groovitron", short: "Groove", slot: 5, kind: "stun", unlockAt: 3, color: 0xff66cc, damage: 0, cooldown: 1.1 },
+  { id: "fusion", name: "Fusion Rifle", short: "Fusion", slot: 6, kind: "gun", unlockAt: 4, color: 0xc8ff88, damage: 2, cooldown: 0.38 },
+  { id: "paint", name: "Paintbrush Cannon", short: "Paint", slot: 7, kind: "gun", unlockAt: 6, color: 0xff88aa, damage: 2, cooldown: 0.28 },
+  { id: "hammer", name: "Mega Smash", short: "Smash", slot: 8, kind: "melee", unlockAt: 8, color: 0xffe08a, damage: 3, cooldown: 0.46 },
 ];
 
 export function weaponById(id: WeaponId) {
@@ -52,7 +55,7 @@ export const WORLDS_STORY = [
   {
     name: "Hookhaven",
     intro: "Brass sky-port. Mama Coil's stall. A baby gate tearing the market.",
-    nix: "A gate just ate the fruit stand. Wrench first. Then the boom.",
+    nix: "A gate just ate the fruit stand. Wrench first. Then the boom. Tap jump twice.",
     close: "Hookhaven holds. For now. Ship pad's hot.",
   },
   {

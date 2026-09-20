@@ -29,7 +29,7 @@ jobs:
               echo "decoded docs/media/$name ($(wc -c < "docs/media/$name") bytes)"
             done
           fi
-          if [ -d releases/apk-chunks ]; then
+          if [ -d releases/apk-chunks ] && [ -f releases/apk-chunks/DONE ]; then
             cat $(ls releases/apk-chunks/*.b64 | sort) | tr -d '\n\r ' | base64 -d > releases/Skybound-Riftkeepers-v1.0.0.apk
             echo "decoded APK from chunks ($(wc -c < releases/Skybound-Riftkeepers-v1.0.0.apk) bytes)"
           fi
