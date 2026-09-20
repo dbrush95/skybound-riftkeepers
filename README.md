@@ -4,17 +4,7 @@ Third-person gadget platformer. Name your inventor, smash crates, swing the Omni
 
 Inspired by classic 3D action-platformers — original cast, worlds, and story. Nix talks. The left graviton boot is the expensive one.
 
-**Repo:** [github.com/dbrush95/skybound-riftkeepers](https://github.com/dbrush95/skybound-riftkeepers)
-
-## Download
-
-| Platform | Link |
-| --- | --- |
-| **Android APK** | [Skybound-Riftkeepers.apk](https://github.com/dbrush95/skybound-riftkeepers/releases/latest/download/Skybound-Riftkeepers.apk) · [raw file](https://github.com/dbrush95/skybound-riftkeepers/raw/main/releases/Skybound-Riftkeepers.apk) |
-| **Windows** | Portable `Skybound.exe` pack is 109 MB (over GitHub’s 100 MB file cap). Grab it from the project chat download. |
-| **Web / source** | Clone this repo, then `npm install` and `npm run dev` |
-
-Sideload the APK (landscape, package `com.skybound.riftkeepers`): enable **Install unknown apps** for your browser or file manager, then open the file.
+**Play / download:** [this repo](https://github.com/dbrush95/skybound-riftkeepers)
 
 ## Screenshots
 
@@ -28,13 +18,19 @@ Sideload the APK (landscape, package `com.skybound.riftkeepers`): enable **Insta
 
 | Neon Docks | Crash Canyons |
 | --- | --- |
-| ![Neon Docks](docs/media/04-neon-docks.svg) | ![Crash Canyons](docs/media/05-crash-canyons.svg) |
+| ![Neon Docks](docs/media/04-neon-docks.jpg) | ![Crash Canyons](docs/media/05-crash-canyons.svg) |
 
 | Crystal Spire | Credits |
 | --- | --- |
-| ![Crystal Spire](docs/media/06-crystal-spire.svg) | ![Credits](docs/media/07-credits.svg) |
+| ![Crystal Spire](docs/media/06-crystal-spire.jpg) | ![Credits](docs/media/07-credits.svg) |
 
-Play captures (JPEG) also land in [`docs/media/`](docs/media/) as `01-title.jpg` … `07-credits.jpg`.
+## Download
+
+| Platform | Link |
+| --- | --- |
+| **Android APK** | Sideload `Skybound-Riftkeepers.apk` (landscape, package `com.skybound.riftkeepers`). Enable **Install unknown apps**, then open the file. Latest file is in this chat download and, when published, [Releases](https://github.com/dbrush95/skybound-riftkeepers/releases). |
+| **Windows** | Portable `Skybound.exe` pack is 109 MB — over GitHub’s 100 MB file cap — so it ships as the chat zip. |
+| **Web / source** | Clone this repo, then `npm install` and `npm run dev` |
 
 ## Play
 
