@@ -1,0 +1,15 @@
+node_modules
+.vercel
+.output
+dist
+downloads
+screenshots
+artifacts
+attachments
+tmp
+.grok
+*.apk.idsig
+.DS_Store
+*.log
+.env
+.env.local
