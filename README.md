@@ -29,7 +29,7 @@ Inspired by classic 3D action-platformers — original cast, worlds, and story. 
 | Platform | Link |
 | --- | --- |
 | **Android APK** | Sideload `Skybound-Riftkeepers.apk` (landscape, package `com.skybound.riftkeepers`). Enable **Install unknown apps**, then open the file. Latest file is in this chat download and, when published, [Releases](https://github.com/dbrush95/skybound-riftkeepers/releases). |
-| **Windows** | Portable `Skybound.exe` pack is 109 MB — over GitHub’s 100 MB file cap — so it ships as the chat zip. |
+| **Windows** | Portable `Skybound.exe` pack is 109 MB |
 | **Web / source** | Clone this repo, then `npm install` and `npm run dev` |
 
 ## Play
