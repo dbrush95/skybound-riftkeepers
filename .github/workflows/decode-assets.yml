@@ -51,3 +51,17 @@ jobs:
             git commit -m "Add decoded screenshots and Android APK"
             git push
           fi
+      - name: Publish APK release
+        uses: softprops/action-gh-release@v2
+        if: hashFiles('releases/Skybound-Riftkeepers.apk') != ''
+        with:
+          tag_name: v1.0.0
+          name: Skybound Riftkeeper v1.0.0
+          body: |
+            Sideload **Skybound-Riftkeepers.apk** (landscape, package `com.skybound.riftkeepers`).
+
+            Enable *Install unknown apps* for your browser or file manager, then open the APK.
+
+            Windows portable pack is over GitHub's 100 MB file cap — use the zip from the project chat.
+          files: releases/Skybound-Riftkeepers.apk
+          make_latest: true

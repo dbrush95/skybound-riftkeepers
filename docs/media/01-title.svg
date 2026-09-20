@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#071428"/><stop offset="1" stop-color="#0a2a4a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="220" cy="120" r="90" fill="#1a4a6a" opacity=".35"/>
+  <circle cx="1080" cy="160" r="140" fill="#143a58" opacity=".4"/>
+  <text x="640" y="210" text-anchor="middle" font-family="Georgia,serif" font-size="92" fill="#7ee0e8" letter-spacing="10">SKYBOUND</text>
+  <text x="640" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#c9a45c" letter-spacing="16">RIFTKEEPER</text>
+  <text x="640" y="330" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#8aa8b8">Captain name</text>
+  <rect x="430" y="350" width="420" height="52" rx="8" fill="#0d1c2e" stroke="#3aa0a4" stroke-width="2"/>
+  <text x="640" y="384" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#d8f0f0">Dallas</text>
+  <rect x="500" y="430" width="280" height="56" rx="10" fill="#1a9aa0"/>
+  <text x="640" y="466" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#062028" font-weight="700">Start Adventure</text>
+  <text x="640" y="620" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6a8898">“The left graviton boot is the expensive one. Try not to melt it.” — Nix</text>
+</svg>
